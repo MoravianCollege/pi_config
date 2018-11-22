@@ -1,5 +1,10 @@
 #!/bin/bash
 
+if [ "$EUID" -ne 0 ]; then
+    echo "Usage sudo locale.sh"
+    exit 1
+fi
+
 # locale
 echo 'Setting locale to en_US.UTF-8'
 cp config_files/etc.locale.gen /etc/locale.gen

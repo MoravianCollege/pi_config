@@ -1,5 +1,10 @@
+if [ "$EUID" -ne 0 ]; then
+    echo "Ussage: sudo config.sh <hostname>"
+    exit 1
+fi
+
 if [ "$#" -ne 1 ]; then
-    echo "Usage: config.sh <hostname>"
+    echo "Usage: sudo config.sh <hostname>"
     exit 1
 fi
 
