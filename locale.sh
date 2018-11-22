@@ -1,6 +1,6 @@
 #!/bin/bash
 
-if [ "$EUID" -ne 0 ]; then
+if [ $(id -u) -ne 0 ] ; then
     echo "Usage sudo locale.sh"
     exit 1
 fi
